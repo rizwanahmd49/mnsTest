@@ -18,7 +18,7 @@ public class Homepage extends Base {
     @BeforeTest
     protected void init() {
         invokeBrowser();
-        getUrl(url);
+        setURL(url);
     }
 
     @Test

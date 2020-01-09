@@ -10,6 +10,10 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 public class Base {
@@ -25,7 +29,7 @@ public class Base {
 
     }
 
-    public void getUrl(String url) {
+    public void setURL(String url) {
         driver.get(url);
     }
 
@@ -35,6 +39,12 @@ public class Base {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 
     }
+    public String verifyLink(String url) throws MalformedURLException, IOException {
+    	HttpURLConnection connection = (HttpURLConnection)(new URL(url).openConnection());
+    	connection.connect();
+    	return connection.getResponseMessage();
+    }
+    
     public void scrollToBottom(){
         ((JavascriptExecutor) driver)
                 .executeScript("window.scrollTo(0, document.body.scrollHeight)");

@@ -16,7 +16,7 @@ public class HomePage_StepDef extends Base {
 	@Given("I am on msn homepage")
 	public void i_am_on_msn_homepage() {
 		invokeBrowser();
-		getUrl(url);
+		setURL(url);
 	}
 
 	@Given("I scroll down the page")
