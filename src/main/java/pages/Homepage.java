@@ -21,7 +21,7 @@ public class Homepage extends Base {
         setURL(url);
     }
 
-    @Test
+    @Test(enabled = false)
     private void searchInGoogle(){
         scrollToBottom();
         WebElement frame=driver.findElement(facebook_frame);
