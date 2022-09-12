@@ -17,7 +17,6 @@ public class Irctc_Step extends Base {
     public void iNavigatedToIrctc(String arg0) {
         invokeBrowser();
         setURL(arg0);
-
     }
 
     @And("I login to Irctc with valid credintion")
@@ -54,7 +53,6 @@ public class Irctc_Step extends Base {
     public void iEnterTheOriginAndDestination(String origin, String destination) {
         driver.findElement(Irctc.origin).sendKeys(origin);
         driver.findElement(Irctc.destination).sendKeys(destination);
-
     }
 
     @And("I enter date {string} in datetime piker")
